@@ -1,4 +1,4 @@
-from distutils.version import LooseVersion
+from packaging.version import Version
 
 from django.conf import settings
 from django.db import connections
@@ -6,8 +6,8 @@ from django.db.models import QuerySet, Manager
 import django
 
 
-DJANGO_VERSION_GTE_19 = LooseVersion(django.get_version()) \
-                        >= LooseVersion('1.9')
+DJANGO_VERSION_GTE_19 = Version(django.get_version()) \
+                        >= Version('1.9')
 
 
 class FuzzyCountQuerySet(QuerySet):
